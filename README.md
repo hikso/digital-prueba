@@ -4,4 +4,5 @@ Proyecto generado con [angular-cli](https://github.com/angular/angular-cli) vers
 
 ## Servidor de desarrollo
 Comando `ng serve` para servidor local. Navegar a `http://localhost:4200/`.
+
 Recordar `npm i` para realizar la instalación de dependencias.
