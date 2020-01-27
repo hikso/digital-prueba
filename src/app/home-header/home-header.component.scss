@@ -1,0 +1,17 @@
+.home-header{
+    height: 70px;
+    max-height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 9;
+    img{
+        width: 40px;
+        margin: 8px 40px;
+    }
+
+    button{
+        float: right;
+    }
+}

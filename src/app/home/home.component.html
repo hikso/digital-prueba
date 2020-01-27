@@ -1,0 +1,73 @@
+  <app-home-header></app-home-header>
+<div class="content-home">  
+  <div class="filings-status">
+    <div class="title">
+      <span>
+        Rádicados asociados
+      </span>
+    </div>
+    <div class="search-input">
+      <i class="material-icons">
+      search
+      </i>
+      <input type="text" [(ngModel)]="searchText"  placeholder="Asunto..."/>
+    </div>
+    <div class="filing-list">
+      <ul class="filings">
+        <li *ngFor="let filing of filings | filter : searchText">
+          <div class="filing" (click)="selectFiling(filing); filing.selected = !filing.selected" [ngClass]="{'selected': filing.selected}">
+            <div class="filing-title"> {{filing.name}} </div>
+            <div class="date-content">
+              <p><i class="material-icons">date_range</i> {{filing.date | date : 'd.MM.yy'}} </p>
+            </div>
+            <div class="state" [ngClass]="{'green': filing.state_code == 1, 'red': filing.state_code == 2, 'yellow': filing.state_code == 3}">
+              {{filing.state}}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="history">
+    <div class="title">
+      <span>
+        Historial de la radicación
+      </span>
+    </div>
+    <div class="not_data" *ngIf="filing_selected == undefined">
+      <h3>Por favor seleccione un rádicado para ver el detalle.</h3>
+      <img src="assets/images/not_data.png" alt="">
+    </div>
+    <div class="over-content" *ngIf="filing_selected !== undefined">
+
+      <div class="filing-detail">
+        <div class="filing">
+          <div class="filing-title"> {{filing_selected.name}} </div>
+          <p><i class="material-icons">vpn_key</i> {{filing_selected.filing_cod}} </p>
+          <p><i class="material-icons">person_outline</i> {{filing_selected.user_name}} </p>
+          <p><i class="material-icons">category</i> {{filing_selected.type}} </p>
+          <div class="date-content">
+            <p><i class="material-icons">date_range</i> {{filing_selected.date | date : 'd.MM.yy'}} </p>
+          </div>
+          <div class="state" [ngClass]="{'green': filing_selected.state_code == 1, 'red': filing_selected.state_code == 2, 'yellow': filing_selected.state_code == 3}">
+            {{filing_selected.state}}
+          </div>
+        </div>
+      </div>
+      <div class="time-line-filing">
+        <div class="item-history" *ngFor="let history of filing_selected.history">
+          <span class="name">{{history.state_name}}</span>
+          <p class="desc">{{history.description}}</p>
+          <div class="date-content">
+            <p><i class="material-icons">date_range</i> {{history.date | date : 'd.MM.yy'}} </p>
+          </div>
+          <div class="item-circle">
+            <img src="assets/images/start.png" *ngIf="history.history_state_code == 1" />
+            <img src="assets/images/in_progress.png" *ngIf="history.history_state_code == 2" />
+            <img src="assets/images/done.png" *ngIf="history.history_state_code == 3" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

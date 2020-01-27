@@ -1,0 +1,20 @@
+// primary font
+$primary_font: 'Poppins';
+
+button{
+    display: inline-block;
+    padding: 10px 30px;
+    width: auto;
+    color: #FFFFFF;
+    background-color: #53714B;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+    margin: 1rem;
+    outline: none;
+}
+
+.logout{
+    font-size: 1rem;
+    font-weight: bold;
+}

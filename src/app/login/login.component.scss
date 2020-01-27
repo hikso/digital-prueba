@@ -1,0 +1,100 @@
+
+.content-login-form{
+    width: 37%;
+    margin: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: -40px;
+    bottom: 0px;
+    height: 400px;
+    padding-left: 70px;
+    .title-header{
+        text-align: center;
+        h2{
+            color: #53714B;
+            margin-bottom: 0px;
+        }
+        h4{
+            margin: 6px;
+            color: #B8B6B6;
+        }
+        img{
+            width: 50px;
+        }
+    }
+    .form-input{
+        margin-top: 1rem;
+        label{
+            display: inline-block;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: Bold;
+            color: #53714B;
+            text-align: left;
+        }
+        input{
+            display: inline-block;
+            width: 70%;
+            font-size: 1rem;
+            border: none;
+            border-bottom: 1px solid #B8B6B6;
+            outline: none;
+            background: transparent;
+            font-weight: Bold;
+            color: #85B376;
+            height: 20px;
+            padding: .7rem 0;
+            &::-webkit-input-placeholder {
+                color: #B8B6B6;
+            }
+            &[name=pin]{
+                width: 40%;
+            }
+        }
+    }
+    .pin-forgoten{
+        text-align: center;
+        a{
+            color: #53714B;
+            text-decoration: none;
+        }
+    }
+    button.form-button{
+        width: 90%;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    &::after{
+        content: "";
+        background-image: url('assets/images/background-second.jpg');
+        background: url('assets/images/background-second.jpg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: -1;   
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content-login-form{
+        width: 70%;
+        padding-left: 0px;
+        .form-input{
+
+            input{
+                width: 100%;
+            }
+        }
+        &::after{
+            background-position-x: -460px;
+        }
+    }
+}
